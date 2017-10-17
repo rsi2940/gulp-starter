@@ -8,11 +8,17 @@
   },
   "author": "Rishi",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "gulp-cssnano": "^2.1.2",
+    "gulp-imagemin": "^3.4.0"
+  },
   "devDependencies": {
     "browser-sync": "^2.18.13",
     "gulp": "^3.9.1",
+    "gulp-if": "^2.0.2",
+    "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.2",
     "pump": "^1.0.2",
     "uglify-es": "^3.1.3"
   }
