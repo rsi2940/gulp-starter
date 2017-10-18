@@ -18,10 +18,10 @@ const initialCats = [
     nicknames: ["Sophie"]
   },
   {
-    name: "Matt",
+    name: "Matthew",
     clickCount: 0,
     imgSrc: "img/cat4.jpg",
-    nicknames: ["Mr. M", "Matty"]
+    nicknames: ["Mr. M", "Matt"]
   },
   {
     name: "Scott",

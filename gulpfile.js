@@ -10,6 +10,7 @@ const useref = require("gulp-useref"); //concatenate the js or css
 const gulpIf = require("gulp-if");
 const cssnano = require("gulp-cssnano");
 const imagemin = require("gulp-imagemin");
+const del = require("del");
 
 gulp.task("hello", function() {
   console.log("Hello everyone!!");
@@ -47,9 +48,17 @@ gulp.task("images", function() {
     .pipe(gulp.dest("dist/img"));
 });
 
+gulp.task("fonts", function() {
+  return gulp.src("src/fonts/**").pipe(gulp.dest("dist/fonts"));
+});
+
+gulp.task("clean:dist", function() {
+  return del.sync("dist");
+});
+
 //watch has 2 parameter first is the glob and 2nd is either function or array of task(s)
 gulp.task("watch", ["browserSync"], function() {
-  gulp.watch("src/scss/style.scss", ["sass"]);
+  gulp.watch("src/scss/styles.scss", ["sass"]);
   gulp.watch("src/*.html", browserSync.reload);
   gulp.watch("src/js/*.js", browserSync.reload);
   gulp.watch("src/css/*.css", browserSync.reload);
@@ -62,4 +71,16 @@ gulp.task("browserSync", function() {
       baseDir: "src"
     }
   });
+});
+
+gulp.task(
+  "build",
+  ["clean:dist", "images", "fonts", "sass", "useref"],
+  function() {
+    console.log("building...");
+  }
+);
+
+gulp.task("serve", ["watch"], function() {
+  console.log("server running");
 });
