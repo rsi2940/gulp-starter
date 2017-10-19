@@ -1,4 +1,15 @@
 body {
   width: 100vw;
   height: 100vh;
-  background: purple; }
+  background: gray;
+  font: helvetica, sans-serif; }
+  body h1 {
+    font-size: 2em; }
+  body > ul {
+    display: inline-block; }
+  body-large {
+    width: 100%; }
+
+div {
+  -webkit-border-radius: 10px;
+  border-radius: 10px; }
